@@ -1,18 +1,16 @@
 import React from "react";
+import { HashRouter, Route } from "react-router-dom";
+import Home from './routes/Home';
+import Join from './routes/Join';
 
-class App extends React.Component{
-  join = () => {
-    console.log('join');
-  }
-
-  render(){
-    
-    return (
-      <div className="App">
-        <h2>Join / Login</h2>
-        <button onClick={this.join}>Join</button>
-      </div>
-    )
-  }
+function App() {
+  return (
+    <HashRouter>
+      <Route path="/" exac={true} component={Home} />
+      <Route path="/Join" exact={true} component={Join} />
+    </HashRouter>
+  )
 }
+
 export default App;
+
