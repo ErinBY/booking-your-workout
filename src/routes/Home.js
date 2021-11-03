@@ -1,7 +1,13 @@
 import React from "react";
 
- function Home(){
-     return <h2>Home</h2>
+ function home(){
+    function goToLogin(e) {
+        window.location.href="/#/Login";
+    }
+
+    return (
+        <button onClick={goToLogin}>무료로 시작하기</button>
+    )
  }
  
-export default Home;
+export default home;
