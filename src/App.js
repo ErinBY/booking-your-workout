@@ -10,7 +10,7 @@ function App() {
       <Route path="/" exact={true}><Home /></Route>
       <Route path="/Login" component={Login}/>
     </HashRouter>
-  )
+  )  
 }
 
 export default App;
