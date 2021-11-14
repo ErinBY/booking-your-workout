@@ -1,14 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+const express = require('express')
+const app = express()
+const port = 3000
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://banana:1234@cluster0.po2n5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(()=>console.log('connect'))
+.catch(err => console.log(err));
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
+
